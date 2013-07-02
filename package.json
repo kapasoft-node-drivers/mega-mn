@@ -1,0 +1,21 @@
+{
+  "name": "rental-driver",
+  "version": "0.0.0",
+  "description": "Driver for rental-manager view",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test",
+    "start": "node app.js"
+  },
+  "dependencies": {
+      "express": "3.1.0",
+      "redis": "0.7.2",
+      "socket.io": "*",
+      "socket.io-client": "*",
+      "sugar":"*",
+      "coffee-script":"*"
+  },
+  "repository": "",
+  "author": "Margots Kapacs",
+  "license": "BSD"
+}
