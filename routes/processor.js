@@ -95,7 +95,7 @@ exports.initialize = function(server) {
                     console.log('get featured Testimonials');
                     break;
                 case 'postNewsletter':
-                    var newsletter = new Newsletter({email:message.email });
+                    var newsletter = new Newsletter({email:message.email, hostname: message.website });
                     newsletter.save(function(e){
                         if(e){
                             console.log('Error saving newsletter: ' + e.message);
