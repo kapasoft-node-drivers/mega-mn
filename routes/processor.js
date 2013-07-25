@@ -64,7 +64,7 @@ exports.initialize = function(server) {
                     console.log('posted inquiry');
                     break;
                 case 'postContactUs':
-                    var contact = new Contact({name:message.name, email:message.email, phone:'1234567890', message: 'App: rental' + '\n' + message.subject + '\n' + message.message });
+                    var contact = new Contact({name:message.name, email:message.email, phone:'1234567890', message: 'App: ' + message.website + '\n' + message.subject + '\n' + message.message });
                     contact.save(function(e){
                         if(e){
                             console.log('Error saving contact: ' + e.message);

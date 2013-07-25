@@ -30,7 +30,7 @@ app.configure('development', function(){
 });
 
 app.get('/', function(req, res) {
-    res.send('Hello from Rental-Manager App: ' + process.env.CONTROLLER_PORT);
+    res.send('Hello from Want My Bucks Back Client Driver: ' + process.env.CONTROLLER_PORT);
 });
 
 //app.post('/api/cache/:id?', api.updateVersion);
