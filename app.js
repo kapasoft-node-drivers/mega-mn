@@ -11,8 +11,11 @@ var express = require('express')
 
 var app = express();
 
+var host = process.env.VCAP_APP_HOST || 'localhost';
+var port = process.env.VCAP_APP_PORT || 3000
+
 app.configure(function(){
-    app.set('port', process.env.VCAP_APP_PORT || 3000);
+    app.set('port', port);
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
     app.use(express.favicon());
@@ -30,7 +33,7 @@ app.configure('development', function(){
 });
 
 app.get('/', function(req, res) {
-    res.send('Hello from Mega MN Driver: ' + process.env.CONTROLLER_PORT);
+    res.send('Hello from Mega MN Driver: ' + port);
 });
 
 //app.post('/api/cache/:id?', api.updateVersion);
@@ -38,7 +41,7 @@ app.get('/', function(req, res) {
 //app.post('/process/review', processor.processReview);
 
 
-var server = http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), host, function(){
     console.log("Express server listening on port " + app.get('port'));
 });
 
